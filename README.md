@@ -1,6 +1,9 @@
 # Tonitrus
 > API Skeleton for Node.js using Express, Jest, Supertest, Circle CI and Vercel
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/rafaelcamargo/tonitrus/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/rafaelcamargo/tonitrus/tree/main)
+[![Coverage Status](https://coveralls.io/repos/github/rafaelcamargo/tonitrus/badge.svg?branch=main)](https://coveralls.io/github/rafaelcamargo/tonitrus?branch=main)
+
 ## Contributing
 
 1. Install [Node](https://nodejs.org/en/) 22.x (Use of [NVM](https://github.com/nvm-sh/nvm) is recommended)
