@@ -41,6 +41,7 @@ jobs:
             - ".git/*"
             - ".circleci/*"
             - "src/*"
+            - "vercel.json"
 
   format:
     <<: *default_env
@@ -64,6 +65,16 @@ jobs:
       - coveralls/upload:
           verbose: true
 
+  deploy:
+    <<: *default_env
+
+    steps:
+      - attach_workspace:
+          at: ~/app
+      - run:
+          name: Deploy to Vercel
+          command: curl -X POST $VERCEL_DEPLOYMENT_URL
+
 workflows:
   version: 2
 
@@ -76,3 +87,11 @@ workflows:
       - test:
           requires:
             - install
+      - deploy:
+          requires:
+            - format
+            - test
+          filters:
+            branches:
+              only:
+                - main
